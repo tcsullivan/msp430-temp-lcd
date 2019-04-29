@@ -19,7 +19,7 @@
  */
 
 #include "board.h"
-#include "i2c/i2c.h"
+#include "i2c.h"
 
 // TMP006 I2C address
 #define TEMP_ADDR (0x40)

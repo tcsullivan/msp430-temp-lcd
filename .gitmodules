@@ -1,3 +1,0 @@
-[submodule "i2c"]
-	path = i2c
-	url = https://github.com/heliocapella/msp430g2553_i2c

@@ -3,7 +3,7 @@ CFLAGS = -mmcu=msp430g2553 -std=gnu99 \
 	 -Os
 
 CSRC = board.c \
-       i2c/i2c.c \
+       i2c.c \
        temp.c \
        main.c
 COBJ = $(patsubst %.c, %.o, $(CSRC))
