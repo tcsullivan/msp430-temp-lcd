@@ -1,6 +1,6 @@
 /**
- * @file main.c
- * Main program entry point.
+ * @file temp.h
+ * Provides support for the TMP006 temperature sensor.
  *
  * Copyright (C) 2019  Clyne Sullivan
  *
@@ -18,18 +18,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "board.h"
-#include "temp.h"
+#ifndef TEMP_H_
+#define TEMP_H_
 
-void main(void)
-{
-	// Prepare processor and IO
-	boardInit();
+/**
+ * Attempts to initialize the TMP006 temperature sensor.
+ * @return Zero on success, non-zero on failure
+ */
+int tempInit(void);
 
-	// Prepare temperature sensor
-	if (tempInit() != 0)
-		while (1); // Sensor error, halt
-
-	while (1);
-}
+#endif // TEMP_H_
 

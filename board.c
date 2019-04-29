@@ -43,5 +43,9 @@ void boardInitPins(void)
 	// All pins should start at a low state
 	P1OUT = 0;
 	P2OUT = 0;
+
+	// Set I2C pins to the proper mode
+	P1SEL |= TEMP_SDA | TEMP_SCL;
+	P1SEL2 |= TEMP_SDA | TEMP_SCL;
 }
 
