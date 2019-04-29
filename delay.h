@@ -1,6 +1,6 @@
 /**
- * @file main.c
- * Main program entry point.
+ * @file delay.h
+ * Delay support using a timer.
  *
  * Copyright (C) 2019  Clyne Sullivan
  *
@@ -18,22 +18,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "board.h"
-#include "delay.h"
-#include "temp.h"
+#ifndef DELAY_H_
+#define DELAY_H_
 
-void main(void)
-{
-	// Prepare processor and IO
-	boardInit();
+void delayInit(void);
 
-	delayInit();
-	__enable_interrupt();
-
-	// Prepare temperature sensor
-	//if (tempInit() != 0)
-	//	while (1); // Sensor error, halt
-
-	while (1);
-}
+#endif // DELAY_H_
 

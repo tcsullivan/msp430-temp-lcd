@@ -1,6 +1,6 @@
 /**
- * @file main.c
- * Main program entry point.
+ * @file delay.c
+ * Delay support using a timer.
  *
  * Copyright (C) 2019  Clyne Sullivan
  *
@@ -19,21 +19,19 @@
  */
 
 #include "board.h"
-#include "delay.h"
-#include "temp.h"
 
-void main(void)
+static unsigned int delayTicks = 0;
+
+void delayInit(void)
 {
-	// Prepare processor and IO
-	boardInit();
-
-	delayInit();
-	__enable_interrupt();
-
-	// Prepare temperature sensor
-	//if (tempInit() != 0)
-	//	while (1); // Sensor error, halt
-
-	while (1);
+	TACCTL0 |= CCIE;
+	TACCR0 = 1000;
+	TACTL |= TASSEL_1 | MC_1;
 }
 
+__attribute__((__interrupt__(TIMER0_A0_VECTOR)))
+static void delayInterruptHandler(void)
+{
+	P1OUT ^= LED;
+	delayTicks++;
+}
