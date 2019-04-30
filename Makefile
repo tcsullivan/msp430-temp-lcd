@@ -1,5 +1,6 @@
 CC = msp430-gcc
-CFLAGS = -mmcu=msp430g2553 -std=gnu99 -Os -ggdb
+CFLAGS = -mmcu=msp430g2553 -std=gnu99 \
+	 -Os
 
 CSRC = board.c \
        delay.c \
