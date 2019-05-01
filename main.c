@@ -41,11 +41,12 @@ int main(void)
 	    while (1);
 	}
 
-	char buf[8];
+	char buf[32];
 	while (1) {
 	    lcdClear();
 	    int16_t temp = tempGetDieTemperature();
-	    sprintf(buf, "%04d", temp);
+	    int16_t vobj = tempGetObjVoltage();
+	    sprintf(buf, "T: %4d V: %4d", temp, vobj);
 	    lcdPuts(buf);
 	    delay(1000);
 	}

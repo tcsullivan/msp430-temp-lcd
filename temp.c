@@ -69,6 +69,11 @@ int16_t tempGetDieTemperature(void)
     return (raw >> 2) / 32;
 }
 
+int16_t tempGetObjVoltage(void)
+{
+	return tempI2CRead(TMP006_VOBJ);
+}
+
 void tempI2CWrite(uint8_t reg, uint16_t value)
 {
 	uint8_t data[3] = {

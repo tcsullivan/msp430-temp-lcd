@@ -27,6 +27,17 @@
  */
 int tempInit(void);
 
+/**
+ * Gets the object's voltage, which may be used in calculations to get the
+ * object's temperature.
+ * @return The object's voltage
+ */
+int16_t tempGetObjVoltage(void);
+
+/**
+ * Gets the current ambient temperature, in Celsius.
+ * @return The ambient temperature
+ */
 int16_t tempGetDieTemperature(void);
 
 #endif // TEMP_H_
