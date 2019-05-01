@@ -9,8 +9,8 @@ project is the MSP430G2553.
 The code may be compiled through the Makefile by simply running `make`.
 
 Code Composer Studio may be used as well: create an empty project for the
-MSP430G2553, then copy all header and source files into that project's
-directory.
+MSP430G2553, selecting the GNU compiler, then copy all header and source files
+into that project's directory.
 
 ### Uploading
 
